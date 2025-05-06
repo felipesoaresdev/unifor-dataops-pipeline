@@ -1,0 +1,31 @@
+# .gitignore
+
+# Airflow
+logs/
+__pycache__/
+*.pyc
+airflow.db
+airflow.cfg
+unittests.cfg
+
+# Docker
+*.pid
+*.log
+.env
+*.env
+*.db
+*.sqlite
+*.sock
+
+# PyCharm/VSCode/IDE
+.vscode/
+.idea/
+
+# Python
+*.pyc
+__pycache__/
+venv/
+.env
+
+# Data
+spark-warehouse/
