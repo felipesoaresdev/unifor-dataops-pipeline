@@ -68,6 +68,18 @@ services:
       --lastname User \
       --role Admin \
       --email admin@example.com"
+  spark:
+    image: bitnami/spark:3.5
+    container_name: spark
+    user: root
+    networks:
+      - default
+    environment:
+      - SPARK_MODE=standalone
+      - HOME=/tmp
+    volumes:
+      - ./scripts:/opt/spark-apps
+    command: sleep infinity
 
 volumes:
   postgres-db-volume:
