@@ -9,7 +9,6 @@ sys.path.append('/opt/airflow/scripts')
 # Imports dos scripts
 from ingest import ingest_news
 from transform_and_store import transform_and_store
-from create_dw import create_dw
 from populate_dw import populate_dw
 
 # Definição da DAG
@@ -34,16 +33,10 @@ with DAG(
     )
 
     # Task 3: criando estrutura dw
-    create_dw_task = PythonOperator(
-        task_id="criando_dw",
-        python_callable=create_dw
-    )
-
-    # Task 4: populando dw
     populate_dw_task = PythonOperator(
         task_id="populando_dw",
         python_callable=populate_dw
     )
 
     # Ordem de execução
-    ingest_task >> transform_and_store_task >> create_dw_task >> populate_dw_task
+    ingest_task >> transform_and_store_task >> populate_dw_task
