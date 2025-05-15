@@ -9,7 +9,7 @@ def transform_and_store():
         print(">> Iniciando transform_and_store...")
 
         # Config MongoDB
-        mongo_uri = os.getenv("MONGO_URI", "mongodb+srv://felipesoares:9HfoY2kZVRS95HK4@unifor.sxibmbn.mongodb.net/?retryWrites=true&w=majority&appName=unifor")
+        mongo_uri = os.getenv("MONGO_URI", "mongodb+srv://felipesoares:password@unifor.sxibmbn.mongodb.net/?retryWrites=true&w=majority&appName=unifor")
         db_name = "tabnews_raw"
         collection_name = "raw_contents"
 
