@@ -9,7 +9,7 @@ def ingest_news():
     data = response.json()
 
     # 2. Conectar ao MongoDB Atlas
-    mongo_uri = "mongodb+srv://felipesoares:9HfoY2kZVRS95HK4@unifor.sxibmbn.mongodb.net/?retryWrites=true&w=majority&appName=unifor"
+    mongo_uri = "mongodb+srv://felipesoares:password@unifor.sxibmbn.mongodb.net/?retryWrites=true&w=majority&appName=unifor"
     client = MongoClient(mongo_uri)
     db = client["tabnews_raw"]
     collection = db["raw_contents"]
